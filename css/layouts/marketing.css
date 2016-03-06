@@ -96,11 +96,8 @@ a.pure-button-primary {
     box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
 }
 .home-menu {
-  background-color: #ffffff;
-  /*make this background work eventually*/
-    background-image:url("headerback.png");
-    background-repeat: no-repeat;
-    background-position: top center;
+  background-color: #500000;
+  
     width: 100%;
     height: 10%;
 }
