@@ -44,14 +44,16 @@ The content `<div>` is where all your content goes.
     max-width: 800px;
     margin-bottom: 50px;
     line-height: 1.6em;
+
 }
 
 .header {
      margin: 0;
-     color: #333;
+     color: #0000A0;
      text-align: center;
      padding: 2.5em 2em 0;
      border-bottom: 1px solid #eee;
+
  }
     .header h1 {
         margin: 0.2em 0;
@@ -68,7 +70,7 @@ The content `<div>` is where all your content goes.
 .content-subhead {
     margin: 50px 0 20px 0;
     font-weight: 300;
-    color: #888;
+    color: #E4287C;
 }
 
 
@@ -80,13 +82,13 @@ appears on the left side of the page.
 
 #menu {
     margin-left: -150px; /* "#menu" width */
-    width: 150px;
+    width: 200px;
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: #191818;
+    background: #333;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
@@ -94,7 +96,7 @@ appears on the left side of the page.
     All anchors inside the menu should be styled like this.
     */
     #menu a {
-        color: #999;
+        color: #FFFFFF;
         border: none;
         padding: 0.6em 0 0.6em 0.6em;
     }
@@ -128,7 +130,11 @@ appears on the left side of the page.
     */
     #menu .pure-menu-selected,
     #menu .pure-menu-heading {
-        background: #500000;
+        background-size: cover;
+        background-repeat: no-repeat
+        background-image: url('http://i.imgur.com/8lRs3Xi.jpg')
+
+
     }
         /*
         This styles a link within a selected menu item `<li>`.
@@ -141,9 +147,10 @@ appears on the left side of the page.
     This styles the menu heading. s
     */
     #menu .pure-menu-heading {
-        font-size: 110%;
+        font-size: 200%;
         color: #fff;
         margin: 0;
+
     }
 
 /* -- Dynamic Button For Responsive Menu -------------------------------------*/
