@@ -130,10 +130,10 @@ appears on the left side of the page.
     */
     #menu .pure-menu-selected,
     #menu .pure-menu-heading {
-        background-size: cover;
-        background-repeat: no-repeat
-        background-image: url('http://i.imgur.com/8lRs3Xi.jpg')
 
+        background-image: url('http://reafteam.me/pictures/logo.png');
+        background-repeat: no-repeat;
+        background-size:contain;
 
     }
         /*
