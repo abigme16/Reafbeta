@@ -88,7 +88,7 @@ appears on the left side of the page.
     left: 0;
     bottom: 0;
     z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: #333;
+    background: #ccc;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
@@ -131,7 +131,7 @@ appears on the left side of the page.
     #menu .pure-menu-selected,
     #menu .pure-menu-heading {
 
-        background-image: url('http://reafteam.me/pictures/logo.png');
+        background-image: url('http://reafteam.me/pictures/logo2.jpg');
         background-repeat: no-repeat;
         background-size:contain;
 
