@@ -135,6 +135,28 @@ p {
                     font-weight: 500;
                     text-shadow: 0 1px 1px black;
                 }
+                .banner4 {
+                    background: transparent url("team1.JPG") 0 0 no-repeat fixed;
+                    text-align:  center;
+                    background-size: cover;
+                    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="AUV1.JPG", sizingMethod='scale');
+
+                    height: 400px;
+                    width: 100%;
+                    margin-bottom: 3em;
+                    display: table;
+                }
+
+                    .banner4-head {
+                        display: table-cell;
+                        vertical-align: middle;
+                        margin-bottom: 0;
+                        font-size: 2em;
+                        color: white;
+                        font-weight: 500;
+                        text-shadow: 0 1px 1px black;
+                    }
+
 /*
  * -- PRICING TABLE WRAPPER --
  * This element wraps up all the pricing table elements
