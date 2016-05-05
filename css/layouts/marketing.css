@@ -208,8 +208,8 @@ a.pure-button-primary {
         font-weight: 300;
     }
      .header h2 {
-        font-weight: 300;
-        font-style: bold
+        font-weight: 500;
+text-decoration: underline;
         color: #3EA99F;
         padding: 0;
         margin-top: 0;
