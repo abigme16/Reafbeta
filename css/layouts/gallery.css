@@ -1,9 +1,9 @@
 body {
-    color: #666;
+    color: white;
 }
 
 h1,h2,h3,h4,h5,h6 {
-    color: #111;
+    color: #3EA99F;
 }
 
 .l-box {
@@ -67,7 +67,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .text-box {
     background: rgb(49, 49, 49); /* bluish grey */
-    color: rgb(255, 190, 94); /* steel blue */
+    color: #3EA99F; /* steel blue */
 }
 
     .text-box-head {
