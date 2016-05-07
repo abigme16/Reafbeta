@@ -119,9 +119,9 @@ p {
                 color: white;
                 font-weight: 500;
                 text-shadow: 0 1px 1px black;
-            }
+            }/*for AUV*/
             .banner3 {
-                background: transparent url('http://i.imgur.com/CYgNdc9.jpg') 0 0 no-repeat fixed;
+                background: transparent url("initial.jpg") 0 0 no-repeat fixed;
                 text-align:  center;
                 background-size: cover;
                 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.imgur.com/CYgNdc9.jpg', sizingMethod='scale');
@@ -163,6 +163,54 @@ p {
                         font-weight: 500;
                         text-shadow: 0 1px 1px black;
                     }
+                    /*banner for subteams*/
+                    .bannermech {
+                        background: 0 0 no-repeat fixed;
+                        background-color: #0000A0;
+                        text-align:  center;
+                        background-size: cover;
+                        background-position: center;
+                        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="srw.jpg", sizingMethod='scale');
+
+                        height: 200px;
+                        width: 100%;
+                        margin-bottom: 2em;
+                        display: table;
+                    }
+
+                        .bannermech-head {
+                            display: table-cell;
+                            vertical-align: bottom;
+                            margin-bottom: 0;
+                            font-size: 5em;
+                            color: white;
+                            font-weight: 500;
+                            text-shadow: 0 1px 1px black;
+                        }
+                        /*banner for subteams*/
+                        .bannerprog {
+                            background: 0 0 no-repeat fixed;
+                            background-color: #E4287C;
+                            text-align:  center;
+                            background-size: cover;
+                            background-position: center;
+                            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="srw.jpg", sizingMethod='scale');
+
+                            height: 200px;
+                            width: 100%;
+                            margin-bottom: 2em;
+                            display: table;
+                        }
+
+                            .bannerprog-head {
+                                display: table-cell;
+                                vertical-align: bottom;
+                                margin-bottom: 0;
+                                font-size: 5em;
+                                color: white;
+                                font-weight: 500;
+                                text-shadow: 0 1px 1px black;
+                            }
 
 /*
  * -- PRICING TABLE WRAPPER --

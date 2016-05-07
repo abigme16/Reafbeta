@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A layout example that shows off a responsive pricing table.">
+
+    <title> Programming &ndash; Page </title>
+
+
+<!--Fix: Activate buttons, change banner image-->
+
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+
+
+<!--[if lte IE 8]>
+  ugh
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+
+<![endif]-->
+<!--[if gt IE 8]><!-->
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+<!--<![endif]-->
+
+
+
+
+
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/layouts/pricing-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="css/layouts/combined.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!--<![endif]-->
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+
+
+
+
+<div class="pure-menu pure-menu-horizontal">
+    <a href="index.html" class="pure-menu-heading">R.E.A.F.</a>
+    <ul class="pure-menu-list">
+
+          <li class="pure-menu-item"><a href="home.html" class="pure-menu-link">Home</a></li>
+          <li class="pure-menu-item"><a href="AUV.html" class="pure-menu-link">Our AUV</a></li>
+
+          <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
+              <a href="team.html" class="pure-menu-link">The Team</a>
+          </li>
+
+          <li class="pure-menu-item"><a href="gallery.html" class="pure-menu-link">Gallery</a></li>
+          <li class="pure-menu-item"><a href="Contact.html" class="pure-menu-link">Contact</a></li>
+    </ul>
+</div>
+
+<div class="bannerprog">
+    <h1 class="bannerprog-head">
+        <i class="fa fa-cogs fa-2x" aria-hidden="true"></i>  Programming Team
+    </h1>
+</div> <!-- end pricing-tables -->
+<div class="content">
+<div class="pure-u-2-3" >
+
+<h2 class="content-subhead">Programming Team Overview</h2>
+<p>
+
+ 	The software for the AUV will be split into several sections. Two of these sections will be run on the Raspberry Pi microcontrollers. The remaining four sections will be run on the Arduino Uno microcontrollers. Several of each type of microcontroller are being used because one microcontroller would not have enough I/O ports and processing power to do all required tasks. The programs executed on the Arduinos will take sensor input, do a few simple calculations, and then output the data to one of the Raspberry Pi’s. This code will be written in the Arduino programming language and will heavily rely on third party libraries written by the manufacturers of the sensors that are being connected to it. The programs executed on the Raspberry Pi’s will check for changes in input from the Arduinos, run image processing and other algorithms that analyze any input, and then output any necessary adjustments to the motors. These tasks will be contained inside of an infinite loop so that it can continually make real-time changes to the AUV. This program will be written in Python and will be executed using the Python 3 interpreter that is pre-installed on the Raspberry Pi. This division of tasks between the Arduino and Raspberry Pi microcontrollers takes advantage of the Raspberry Pi’s superior processing power as well as the Arduino’s greater sensor software libraries and better I/O capabilities.
+
+</p>
+</div>
+<div class="pure-u-1-4"><br><br><br><br>
+<img src="pictures/filler.png" alt="fills" style="width:100%;height:100%">
+<img src="pictures/filler.png" alt="fills" style="width:100%;height:100%">
+</div>
+
+
+
+
+</div>
+
+
+</body>
+</html>
