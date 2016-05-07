@@ -211,6 +211,29 @@ p {
                                 font-weight: 500;
                                 text-shadow: 0 1px 1px black;
                             }
+                            .bannerelec {
+                                background: 0 0 no-repeat fixed;
+                                background-color:  #3EA99F;
+                                text-align:  center;
+                                background-size: cover;
+                                background-position: center;
+                                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="srw.jpg", sizingMethod='scale');
+
+                                height: 200px;
+                                width: 100%;
+                                margin-bottom: 2em;
+                                display: table;
+                            }
+
+                                .bannerelec-head {
+                                    display: table-cell;
+                                    vertical-align: bottom;
+                                    margin-bottom: 0;
+                                    font-size: 5em;
+                                    color: white;
+                                    font-weight: 500;
+                                    text-shadow: 0 1px 1px black;
+                                }
 
 /*
  * -- PRICING TABLE WRAPPER --
@@ -442,7 +465,74 @@ The content `<div>` is where all your content goes.
     font-weight: 300;
     color: #E4287C;
 }
+.content2 {
+    margin: 0 auto;
+    padding: 0 3em;
+    max-width: 900px;
+    margin-bottom: 50px;
+    line-height: 1.6em;
 
+}
+
+.header {
+     margin: 0;
+     color: #0000A0;
+     text-align: center;
+     padding: 2.5em 2em 0;
+     border-bottom: 1px solid #eee;
+
+ }
+    .header h1 {
+        margin: 0.2em 0;
+        font-size: 3em;
+        font-weight: 300;
+    }
+     .header h2 {
+        font-weight: 300;
+        color: #3EA99F;
+        padding: 0;
+        margin-top: 0;
+    }
+
+.content2-subhead {
+    margin: 50px 0 20px 0;
+    font-weight: 300;
+    color: #0000A0;
+}
+.content3 {
+    margin: 0 auto;
+    padding: 0 3em;
+    max-width: 900px;
+    margin-bottom: 50px;
+    line-height: 1.6em;
+
+}
+
+.header {
+     margin: 0;
+     color: #0000A0;
+     text-align: center;
+     padding: 2.5em 2em 0;
+     border-bottom: 1px solid #eee;
+
+ }
+    .header h1 {
+        margin: 0.2em 0;
+        font-size: 3em;
+        font-weight: 300;
+    }
+     .header h2 {
+        font-weight: 300;
+        color: #3EA99F;
+        padding: 0;
+        margin-top: 0;
+    }
+
+.content3-subhead {
+    margin: 50px 0 20px 0;
+    font-weight: 300;
+    color:  #3EA99F;
+}
 
 
 /*
