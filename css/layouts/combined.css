@@ -121,7 +121,7 @@ p {
                 text-shadow: 0 1px 1px black;
             }/*for AUV*/
             .banner3 {
-                background: transparent url("initial.jpg") 0 0 no-repeat fixed;
+                background: transparent url("model.jpg") 0 0 no-repeat fixed;
                 text-align:  center;
                 background-size: cover;
                 filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.imgur.com/CYgNdc9.jpg', sizingMethod='scale');
