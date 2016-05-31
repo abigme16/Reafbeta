@@ -1,0 +1,716 @@
+/*
+ * -- BASE STYLES --
+ * Most of these are inherited from Base, but I want to change a few.
+ */
+body {
+    color: #526066;
+    background-image: url('http://orig15.deviantart.net/d209/f/2014/280/4/a/since_style_4k__texture__grey_background_by_giozaga-d81xamd.jpg');
+}
+
+h2, h3 {
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+h4 { letter-spacing: normal;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    font-weight: 600;
+  }
+
+p {
+    line-height: 1.6em;
+}
+/* button*/
+.button-apply {
+           color: white;
+           border-radius: 4px;
+           text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+           background: rgb(66, 184, 221);
+       }
+
+/*
+ * -- Layout Styles --
+ */
+.l-content {
+    margin: 0 auto;
+
+}
+
+.l-box {
+    padding: 0.5em 2em;
+}
+
+/*
+ * -- MENU STYLES --
+ * Make the menu have a very faint box-shadow.
+ */
+.pure-menu {
+    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+}
+
+
+/*
+ * -- BANNER --
+ * The top banner with the headings. By using a combination
+ * of `display: table;` and `display: table-cell;`, we can
+ * vertically center the text.
+ */
+
+.banner {
+    background: transparent url('http://i.imgur.com/CYgNdc9.jpg') 0 0 no-repeat fixed;
+    text-align: center;
+    background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.imgur.com/CYgNdc9.jpg', sizingMethod='scale');
+
+    height: 200px;
+    width: 100%;
+    margin-bottom: 3em;
+    display: table;
+}
+
+    .banner-head {
+        display: table-cell;
+        vertical-align: middle;
+        margin-bottom: 0;
+        font-size: 2em;
+        color: white;
+        font-weight: 500;
+        text-shadow: 0 1px 1px black;
+    }
+
+    .banner1 {
+        background: transparent url("AUV1.jpg") 0 0 no-repeat fixed;
+        text-align:  center;
+        background-size: cover;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="AUV1.JPG", sizingMethod='scale');
+
+        height: 400px;
+        width: 100%;
+        margin-bottom: 3em;
+        display: table;
+    }
+
+        .banner1-head {
+            display: table-cell;
+            vertical-align: middle;
+            margin-bottom: 0;
+            font-size: 2em;
+            color: white;
+            font-weight: 500;
+            text-shadow: 0 1px 1px black;
+        }
+
+        .banner2 {
+            background: transparent url("AUV1.jpg") 0 0 no-repeat fixed;
+            text-align:  center;
+            background-size: cover;
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="AUV1.JPG", sizingMethod='scale');
+
+            height: 400px;
+            width: 100%;
+            margin-bottom: 3em;
+            display: table;
+        }
+
+            .banner2-head {
+                display: table-cell;
+                vertical-align: bottom;
+                margin-bottom: 0;
+                font-size: 2em;
+                color: white;
+                font-weight: 500;
+                text-shadow: 0 1px 1px black;
+            }/*for AUV*/
+            .banner3 {
+                background: transparent url("model.jpg") 0 0 no-repeat fixed;
+                text-align:  center;
+                background-size: cover;
+                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i.imgur.com/CYgNdc9.jpg', sizingMethod='scale');
+
+                height: 400px;
+                width: 100%;
+                margin-bottom: 3em;
+                display: table;
+            }
+
+                .banner3-head {
+                    display: table-cell;
+                    vertical-align: bottom;
+                    margin-bottom: 0;
+                    font-size: 4em;
+                    color: white;
+                    font-weight: 500;
+                    text-shadow: 0 1px 1px black;
+                }
+                .banner4 {
+                    background: transparent url("srw.jpg") 0 0 no-repeat fixed;
+                    text-align:  center;
+                    background-size: cover;
+                    background-position: center;
+                    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="srw.jpg", sizingMethod='scale');
+
+                    height: 400px;
+                    width: 100%;
+                    margin-bottom: 3em;
+                    display: table;
+                }
+
+                    .banner4-head {
+                        display: table-cell;
+                        vertical-align: middle;
+                        margin-bottom: 0;
+                        font-size: 2em;
+                        color: white;
+                        font-weight: 500;
+                        text-shadow: 0 1px 1px black;
+                    }
+                    /*banner for subteams*/
+                    .bannermech {
+                        background: 0 0 no-repeat fixed;
+                        background-color: #0000A0;
+                        text-align:  center;
+                        background-size: cover;
+                        background-position: center;
+                        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="srw.jpg", sizingMethod='scale');
+
+                        height: 200px;
+                        width: 100%;
+                        margin-bottom: 2em;
+                        display: table;
+                    }
+
+                        .bannermech-head {
+                            display: table-cell;
+                            vertical-align: bottom;
+                            margin-bottom: 0;
+                            font-size: 5em;
+                            color: white;
+                            font-weight: 500;
+                            text-shadow: 0 1px 1px black;
+                        }
+                        /*banner for subteams*/
+                        .bannerprog {
+                            background: 0 0 no-repeat fixed;
+                            background-color: #E4287C;
+                            text-align:  center;
+                            background-size: cover;
+                            background-position: center;
+                            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="srw.jpg", sizingMethod='scale');
+
+                            height: 200px;
+                            width: 100%;
+                            margin-bottom: 2em;
+                            display: table;
+                        }
+
+                            .bannerprog-head {
+                                display: table-cell;
+                                vertical-align: bottom;
+                                margin-bottom: 0;
+                                font-size: 5em;
+                                color: white;
+                                font-weight: 500;
+                                text-shadow: 0 1px 1px black;
+                            }
+                            .bannerelec {
+                                background: 0 0 no-repeat fixed;
+                                background-color:  #3EA99F;
+                                text-align:  center;
+                                background-size: cover;
+                                background-position: center;
+                                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="srw.jpg", sizingMethod='scale');
+
+                                height: 200px;
+                                width: 100%;
+                                margin-bottom: 2em;
+                                display: table;
+                            }
+
+                                .bannerelec-head {
+                                    display: table-cell;
+                                    vertical-align: bottom;
+                                    margin-bottom: 0;
+                                    font-size: 5em;
+                                    color: white;
+                                    font-weight: 500;
+                                    text-shadow: 0 1px 1px black;
+                                }
+
+/*
+ * -- PRICING TABLE WRAPPER --
+ * This element wraps up all the pricing table elements
+ */
+ .pricing-tables,
+ .information {
+    max-width: 980px;
+    margin: 0 auto;
+ }
+.pricing-tables {
+    margin-bottom: 3.125em;
+    text-align: center;
+}
+
+/*
+ * -- PRICING TABLE  --
+ * Every pricing table has the .pricing-table class
+ */
+.pricing-table {
+    border: 1px solid #ddd;
+    margin: 0 0.5em 2em;
+    padding: 0 0 3em;
+}
+
+/*
+ * -- PRICING TABLE HEADER COLORS --
+ * Choose a different color based on the type of pricing table.
+ */
+.pricing-table-free .pricing-table-header {
+    background: #0000A0;
+}
+
+.pricing-table-biz .pricing-table-header {
+    background: #3EA99F;
+}
+
+/*
+ * -- PRICING TABLE HEADER --
+ * By default, a header is black/white, and has some styles for its <h2> name.
+ */
+.pricing-table-header {
+    background: #E4287C;
+    color: #fff;
+}
+    .pricing-table-header h2 {
+        margin: 0;
+        padding-top: 2em;
+        font-size: 1em;
+        font-weight: normal;
+
+    }
+
+
+/*
+ * -- PRICING TABLE PRICE --
+ * Styles for the price and the corresponding <span>per month</span>
+ */
+.pricing-table-price {
+    font-size: 6em;
+    margin: 0.2em 0 0;
+    font-weight: 100;
+}
+    .pricing-table-price span {
+        display: block;
+        text-transform: uppercase;
+        font-size: 0.2em;
+        padding-bottom: 2em;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.5);
+        *color: #fff;
+    }
+
+
+
+/*
+ * -- PRICING TABLE LIST --
+ * Each pricing table has a <ul> which is denoted by the .pricing-table-list class
+ */
+.pricing-table-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+/*
+ * -- PRICING TABLE LIST ELEMENTS --
+ * Styles for the individual list elements within each pricing table
+ */
+.pricing-table-list li {
+    padding: 0.8em 0;
+    background: #f7f7f7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+
+/*
+ * -- PRICING TABLE BUTTON --
+ * Styles for the "Choose" button at the bottom of a pricing table.
+ * This inherits from Pure Button.
+ */
+.button-choose {
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #333;
+    border-radius: 2em;
+    font-weight: bold;
+    position: relative;
+    bottom: -1.5em;
+}
+
+.information-head {
+    color: black;
+    font-weight: 500;
+}
+
+.footer {
+    background: #111;
+    color: #888;
+    text-align: center;
+}
+    .footer a {
+        color: #ddd;
+    }
+
+
+
+/*
+ * -- TABLET MEDIA QUERIES --
+ * On tablets, we want to slightly adjust the size of the banner
+ * text and add some vertical space between the various pricing tables
+ */
+@media(min-width: 767px) {
+
+    .banner-head {
+        font-size: 4em;
+    }
+    .pricing-table {
+        margin-bottom: 0;
+    }
+
+}
+
+/*
+ * -- PHONE MEDIA QUERIES --
+ * On phones, we want to reduce the height and font-size of the banner further
+ */
+@media (min-width: 480px) {
+    .banner {
+        height: 400px;
+    }
+    .banner-head {
+        font-size: 5em;
+    }
+}
+body {
+    color: #39064A;
+}
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+Add transition to containers so they can push in and out.
+*/
+#layout,
+#menu,
+.menu-link {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+#layout {
+    position: relative;
+    padding-left: 0;
+}
+    #layout.active #menu {
+        left: 150px;
+        width: 150px;
+    }
+
+    #layout.active .menu-link {
+        left: 150px;
+    }
+/*
+The content `<div>` is where all your content goes.
+*/
+.content {
+    margin: 0 auto;
+    padding: 0 3em;
+    max-width: 900px;
+    margin-bottom: 50px;
+    line-height: 1.6em;
+
+}
+
+.header {
+     margin: 0;
+     color: #0000A0;
+     text-align: center;
+     padding: 2.5em 2em 0;
+     border-bottom: 1px solid #eee;
+
+ }
+    .header h1 {
+        margin: 0.2em 0;
+        font-size: 3em;
+        font-weight: 300;
+    }
+     .header h2 {
+        font-weight: 300;
+        color: #3EA99F;
+        padding: 0;
+        margin-top: 0;
+    }
+
+.content-subhead {
+    margin: 50px 0 20px 0;
+    font-weight: 300;
+    color: #E4287C;
+}
+.content2 {
+    margin: 0 auto;
+    padding: 0 3em;
+    max-width: 900px;
+    margin-bottom: 50px;
+    line-height: 1.6em;
+
+}
+
+.header {
+     margin: 0;
+     color: #0000A0;
+     text-align: center;
+     padding: 2.5em 2em 0;
+     border-bottom: 1px solid #eee;
+
+ }
+    .header h1 {
+        margin: 0.2em 0;
+        font-size: 3em;
+        font-weight: 300;
+    }
+     .header h2 {
+        font-weight: 300;
+        color: #3EA99F;
+        padding: 0;
+        margin-top: 0;
+    }
+
+.content2-subhead {
+    margin: 50px 0 20px 0;
+    font-weight: 300;
+    color: #0000A0;
+}
+.content3 {
+    margin: 0 auto;
+    padding: 0 3em;
+    max-width: 900px;
+    margin-bottom: 50px;
+    line-height: 1.6em;
+
+}
+
+.header {
+     margin: 0;
+     color: #0000A0;
+     text-align: center;
+     padding: 2.5em 2em 0;
+     border-bottom: 1px solid #eee;
+
+ }
+    .header h1 {
+        margin: 0.2em 0;
+        font-size: 3em;
+        font-weight: 300;
+    }
+     .header h2 {
+        font-weight: 300;
+        color: #3EA99F;
+        padding: 0;
+        margin-top: 0;
+    }
+
+.content3-subhead {
+    margin: 50px 0 20px 0;
+    font-weight: 300;
+    color:  #3EA99F;
+}
+
+
+/*
+The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
+appears on the left side of the page.
+*/
+
+#menu {
+    margin-left: -150px; /* "#menu" width */
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000; /* so the menu or its navicon stays above all content */
+    background: #000;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+    /*
+    All anchors inside the menu should be styled like this.
+    */
+    #menu a {
+        color: #FFFFFF;
+        border: none;
+        padding: 0.6em 0 0.6em 0.6em;
+    }
+
+    /*
+    Remove all background/borders, since we are applying them to #menu.
+    */
+     #menu .pure-menu,
+     #menu .pure-menu ul {
+        border: none;
+        background: transparent;
+    }
+
+    /*
+    Add that light border to separate items into groups.
+    */
+    #menu .pure-menu ul,
+    #menu .pure-menu .menu-item-divided {
+        border-top: 1px solid #333;
+    }
+        /*
+        Change color of the anchor links on hover/focus.
+        */
+        #menu .pure-menu li a:hover,
+        #menu .pure-menu li a:focus {
+            background: #333;
+        }
+
+    /*
+    This styles the selected menu item `<li>`.
+    */
+    #menu .pure-menu-selected,
+    #menu .pure-menu-heading {
+
+        background-image: url('http://reafteam.me/pictures/logo2.jpg');
+        background-repeat: no-repeat;
+        background-size:contain;
+
+    }
+        /*
+        This styles a link within a selected menu item `<li>`.
+        */
+        #menu .pure-menu-selected a {
+            color: #fff;
+        }
+
+    /*
+    This styles the menu heading. s
+    */
+    #menu .pure-menu-heading {
+        font-size: 200%;
+        color: #fff;
+        margin: 0;
+
+    }
+
+/* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+/*
+The button to open/close the Menu is custom-made and not part of Pure. Here's
+how it works:
+*/
+
+/*
+`.menu-link` represents the responsive menu toggle that shows/hides on
+small screens.
+*/
+.menu-link {
+    position: fixed;
+    display: block; /* show this only on small screens */
+    top: 0;
+    left: 0; /* "#menu width" */
+    background: #000;
+    background: rgba(0,0,0,0.7);
+    font-size: 10px; /* change this value to increase/decrease button size */
+    z-index: 10;
+    width: 2em;
+    height: auto;
+    padding: 2.1em 1.6em;
+}
+
+    .menu-link:hover,
+    .menu-link:focus {
+        background: #000;
+    }
+
+    .menu-link span {
+        position: relative;
+        display: block;
+    }
+
+    .menu-link span,
+    .menu-link span:before,
+    .menu-link span:after {
+        background-color: #fff;
+        width: 100%;
+        height: 0.2em;
+    }
+
+        .menu-link span:before,
+        .menu-link span:after {
+            position: absolute;
+            margin-top: -0.6em;
+            content: " ";
+        }
+
+        .menu-link span:after {
+            margin-top: 0.6em;
+        }
+
+
+/* -- Responsive Styles (Media Queries) ------------------------------------- */
+
+/*
+Hides the menu at `48em`, but modify this based on your app's needs.
+*/
+@media (min-width: 48em) {
+
+    .header,
+    .content {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+    #layout {
+        padding-left: 150px; /* left col width "#menu" */
+        left: 0;
+    }
+    #menu {
+        left: 150px;
+    }
+
+    .menu-link {
+        position: fixed;
+        left: 150px;
+        display: none;
+    }
+
+    #layout.active .menu-link {
+        left: 150px;
+    }
+}
+
+@media (max-width: 48em) {
+    /* Only apply this when the window is small. Otherwise, the following
+    case results in extra padding on the left:
+        * Make the window small.
+        * Tap the menu to trigger the active state.
+        * Make the window large again.
+    */
+    #layout.active {
+        position: relative;
+        left: 150px;
+    }
+}

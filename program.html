@@ -34,7 +34,7 @@
         <link rel="stylesheet" href="css/layouts/pricing-old-ie.css">
     <![endif]-->
     <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="css/layouts/combined.css">
+        <link rel="stylesheet" href="css/layouts/combined2.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
     <!--<![endif]-->
 
@@ -75,19 +75,96 @@
     </h1>
 </div> <!-- end pricing-tables -->
 <div class="content">
-<div class="pure-u-2-3" >
+<div class="pure-u-4-5" >
 
-<h2 class="content-subhead">Programming Team Overview</h2>
+<h2 class="content-subhead">Programming Overview</h2>
 <p>
 
- 	The software for the AUV will be split into several sections. Two of these sections will be run on the Raspberry Pi microcontrollers. The remaining four sections will be run on the Arduino Uno microcontrollers. Several of each type of microcontroller are being used because one microcontroller would not have enough I/O ports and processing power to do all required tasks. The programs executed on the Arduinos will take sensor input, do a few simple calculations, and then output the data to one of the Raspberry Pi’s. This code will be written in the Arduino programming language and will heavily rely on third party libraries written by the manufacturers of the sensors that are being connected to it. The programs executed on the Raspberry Pi’s will check for changes in input from the Arduinos, run image processing and other algorithms that analyze any input, and then output any necessary adjustments to the motors. These tasks will be contained inside of an infinite loop so that it can continually make real-time changes to the AUV. This program will be written in Python and will be executed using the Python 3 interpreter that is pre-installed on the Raspberry Pi. This division of tasks between the Arduino and Raspberry Pi microcontrollers takes advantage of the Raspberry Pi’s superior processing power as well as the Arduino’s greater sensor software libraries and better I/O capabilities.
+  The software that the AUV runs is spread out across several microcontrollers. The programs on
+
+Arduino Uno microcontrollers that are connected to sensors continuously receive input from the
+
+sensors and output this data to the Raspberry Pis. The Arduino Uno that is connected to the
+
+thrusters does the reverse – it receives data from the Raspberry Pis that tell it which thrusters to
+
+turn on or off. The programs on the Raspberry Pis are more complicated. One of the Raspberry
+
+Pis is connected to two cameras. This Raspberry Pi takes the video from the camera and runs it
+
+through an open-source image processing library called OpenCV. Any information determined
+
+by this image processing is then sent to the other Raspberry Pi. The second Raspberry Pi collects
+
+all of the data from all of the other microcontrollers and stores the data in a file. It then takes the
+
+data and analyzes it to determine which task it should be performing and how to change the
+
+thruster speeds in order to complete this task. One essential part of the design is the use of multiple microcontrollers, including two Raspberry
+
+Pi 2s and several Arduino Unos. These were chosen because they are relatively easy to use for
+
+people who have little previous experience programming microcontrollers. The Raspberry Pis
+
+were specifically chosen because they have superior processing power, as well as a full Linux-
+
+based operating system. This allows us to use image processing and other processor-intensive
+
+algorithms to analyze sensor and camera data. The Arduino Unos, on the other hand, have very
+
+little processing power, but can more easily handle serial input from the sensors and output to the
+
+thrusters. The microcontrollers communicate using serial communication along a USB cable
+
+between an Arduino Uno and a Raspberry Pi and using TCP/IP along an Ethernet cable between
+
+the two Raspberry Pis.
 
 </p>
 </div>
-<div class="pure-u-1-4"><br><br><br><br>
-<img src="pictures/filler.png" alt="fills" style="width:100%;height:100%">
-<img src="pictures/filler.png" alt="fills" style="width:100%;height:100%">
-</div>
+
+<div class="pure-u-4-5"> <h2 class="content-subhead">Image Processing</h2><p>The vision subsystem provides crucial information for target tracking and course navigation. Two
+
+Logitech HD Webcam C270 cameras, one facing forward for course navigation and the other facing
+
+downward for path marker identification, were placed on the frontal section of the vehicle. Software
+
+module for image processing and computer vision was built utilizing Intel’s OpenCV 2.4 library.
+
+In order to achieve real time target tracking based on color detection, first, the upper and lower
+
+boundaries of the desired color in the HSV color space are predefined. The frame is resized to have a
+
+width of 600px. Downsizing the frame allows to process the frame faster, leading to an increase in
+
+FPS (due to less image data to process). The frame is then blurred to reduce high frequency noise and
+
+allow to focus on the structural objects inside the frame. Finally, a conversion from the frame to the
+
+HSV color space is done. On the other hand, to determine the distance from the vehicle to a known
+
+object, triangle similarity index is utilized. By working collaboratively with the color detection module,
+
+the AUV is able to identify objects based on color and estimate distance with respect to AUV’s location.
+
+Necessary data analysis is executed in order to maneuver the vehicle to correct position.</p></div>
+<div class="pure-u-4-5"><h2 class="content-subhead">Thruster Control</h2><p>The thrusters are controlled through the combined operation of an Arduino Uno microcontroller and a Raspberry
+
+Pi B. The Arduino Uno is connected to various sensors, which collect information about the surroundings and state
+
+of the robot to the Arduino Uno. The Arduino Uno receives the data and transfers it to the Raspberry Pi for data
+
+analysis. Serial communication exists between the Arduino Uno and Raspberry Pi. The Raspberry Pi utilizes
+
+programming language Python 2.7 to interpret the data received from the sensors through the Arduino. Based on
+
+the data process, the program formulates a plan of action for the thrusters. These commands are then
+
+transmitted from the Raspberry Pi to the Arduino Uno, which outputs the instructions to the thrusters. This is an
+
+iterative process, so that the vehicle is able to constantly adjust to its surroundings.</p></div>
+<div class="pure-u-1-1"><img src="pictures/thrusters.png" style="width:50% ;height:50%"></div>
+
 <div class="pure-u-1-1">
 <a button class="button-choose pure-button" href="mech.html"><i class="fa fa-cogs fa-2x" aria-hidden="true"></i> </button></a>
 <a button class="button-choose pure-button" href="elec.html"><i class="fa fa-lightbulb-o fa-2x" aria-hidden="true"></i> </button></a>
