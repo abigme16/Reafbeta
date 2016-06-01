@@ -92,13 +92,11 @@ Two lithium polymer batteries provide power for the AUV. They are combined in pa
 <div class="pure-u-4-5"><h2 class="content3-subhead">M4 ATX Power Supply</h2><p>The M4-ATX DC-DC from Minibox, which allows the user to monitor and set up parameters for voltages, is used as the power supply. The ATX is equipped with 3.3 V, 5 V, and 12 V pins. It receives potential from the two 14.8 V batteries, converts it, and connects to the power distribution board which divides the voltage depending on what the different sensors, thrusters, and microcontrollers require.
 The ignition, which is between the battery positive and battery negative (ground) input connector, is used for the kill switch.
 As for the DIP (dual in-line package) switches, the power supply is set to setting P1, which gives a 5-second off-delay and a 1 minute AutoLatch. </p>
-</div><div class="pure-u-4-5"><h2 class="content3-subhead">Component Placement</h2><p>The electrical components were placed according to power and data distribution
+</div><div class="pure-u-4-5"><h2 class="content3-subhead">Component Placement</h2><p>
+  The electrical components were placed according to power and data distribution
 
-as well as heat production. The bottom tray houses the power distribution boards including the Power Control Board (PCB) and the M4-ATX. The PCB is directly connected
-
-to the batteries and will produce a good amount of heat while the M4-ATX is designed
-
-specifically to not produce a lot of heat. Most of the components are housed on the top
+as well as heat production. The bottom tray houses the power distribution boards including
+ the Power Control Board (PCB) and the M4-ATX.  Most of the components are housed on the top
 
 racks including two Raspberry Pis, three Arduino Uno’s, the AHRS (Altitude Heading
 
@@ -106,20 +104,14 @@ Reference System), and the pressure sensor. The AHRS and pressure sensor were pl
 
 at opposite edges of the tube to allow for an accurate readings for each without
 
-interference from other components. This left the Raspberry Pis and Arudino’s in the
-
-middle of the tray. Each of the components are fairly small and the only components
-
-that would produce enough heat to cause a problem or overheat itself are the
-
-Raspberry Pis and Arduino Uno. To absorb some of the heat to allow for a better
+interference from other components. To absorb some of the heat to allow for a better
 
 functioning board, two heat sinks were placed on each board with thermal adhesive
 
 tape.</p><div>
   <div class="pure-u-1-1"><img src="pictures/placement.png" alt="kplacement" style="width:70%;height:70%"></div>
 <div class="pure-u-4-5"><h2 class="content3-subhead">Kill Switch</h2><p>The kill switch was designed as a switch that is connected to the M4 ATX ignition port. When the kill switch is not activated the ATX operates with the ignition in the on position but when it is pressed it switches the ignition port is off and the thrusters will receive no power. Unless the switch is flipped again, the switch will send a signal to ATX that will not let it output the power until it is flipped off. </p>
-<div class="pure-u-1-1"><img src="pictures/killw.png" alt="kill" style="width:100%;height:100%"></div>
+
   <a button class="button-choose pure-button" href="mech.html"><i class="fa fa-cogs fa-2x" aria-hidden="true"></i></button></a>
   <a button class="button-choose pure-button" href="program.html"><i class="fa fa-desktop fa-2x" aria-hidden="true"></i></button></a>
 

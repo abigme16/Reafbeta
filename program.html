@@ -88,7 +88,7 @@ sensors and output this data to the Raspberry Pis. The Arduino Uno that is conne
 
 thrusters does the reverse – it receives data from the Raspberry Pis that tell it which thrusters to
 
-turn on or off. The programs on the Raspberry Pis are more complicated. One of the Raspberry
+turn on or off. One of the Raspberry
 
 Pis is connected to two cameras. This Raspberry Pi takes the video from the camera and runs it
 
@@ -100,30 +100,13 @@ all of the data from all of the other microcontrollers and stores the data in a 
 
 data and analyzes it to determine which task it should be performing and how to change the
 
-thruster speeds in order to complete this task. One essential part of the design is the use of multiple microcontrollers, including two Raspberry
-
-Pi 2s and several Arduino Unos. These were chosen because they are relatively easy to use for
-
-people who have little previous experience programming microcontrollers. The Raspberry Pis
-
-were specifically chosen because they have superior processing power, as well as a full Linux-
-
-based operating system. This allows us to use image processing and other processor-intensive
-
-algorithms to analyze sensor and camera data. The Arduino Unos, on the other hand, have very
-
-little processing power, but can more easily handle serial input from the sensors and output to the
-
-thrusters. The microcontrollers communicate using serial communication along a USB cable
-
-between an Arduino Uno and a Raspberry Pi and using TCP/IP along an Ethernet cable between
-
-the two Raspberry Pis.
+thruster speeds in order to complete this task.
 
 </p>
 </div>
 
-<div class="pure-u-4-5"> <h2 class="content-subhead">Image Processing</h2><p>The vision subsystem provides crucial information for target tracking and course navigation. Two
+<div class="pure-u-4-5"> <h2 class="content-subhead">Image Processing</h2><p>
+  The vision subsystem provides crucial information for target tracking and course navigation. Two
 
 Logitech HD Webcam C270 cameras, one facing forward for course navigation and the other facing
 
