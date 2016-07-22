@@ -18,6 +18,13 @@ h4 { letter-spacing: normal;
     font-weight: 600;
   }
 
+  h5 { letter-spacing: normal;
+     font-style: italic;
+     font-family:serif;
+      font-size: .75em;
+      font-weight: 200;
+    }
+
 p {
     line-height: 1.6em;
 }
