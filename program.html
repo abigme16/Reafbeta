@@ -99,7 +99,7 @@ The thrusters send information regarding their temperature, speed, current, and 
 <br><br>
 The AHRS passes information regarding the vehicle’s orientation so the Raspberry Pi can analyze the data and send information to the thrusters regarding horizontal movement.
 </p></div>
-<div class="pure-u-4-5"><h2 class="content-subhead">Thruster Control</h2><p>
+<div class="pure-u-4-5"><h2 class="content-subhead">Cameras</h2><p>
   <head>
     Two Logitech HD Webcam c270 cameras, one facing forwards, the other facing downwards, provide information for navigation and target tracking. Using Intel’s Open CV 2.4 Library, real time target tracking is possible through color detection. First, the frame is downsized to increase the number of frames per second. Then, in order to reduce the noise from high frequencies, it is then blurred to focus on the objects inside the 600px width. Lastly, a conversion from frame to HVS color space is done. This allows Ula to determine color and distance.
   </head>
