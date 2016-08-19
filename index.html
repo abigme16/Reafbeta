@@ -1,81 +1,150 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A layout example that shows off a responsive product landing page.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <title>R.E.A.F</title>
+    <title>Home</title>
 
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Custom CSS -->
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/font-awesome.min.css">
 
-
-<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-
-
-<!--[if lte IE 8]>
-ugh
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
-
-<![endif]-->
-<!--[if gt IE 8]><!-->
-
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-
-<!--<![endif]-->
-
-
-
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-
-
-
-
-    <!--[if lte IE 8]>
-        <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+      <link rel="stylesheet" href="css/background.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="css/layouts/marketing.css">
 
-    <!--<![endif]-->
 </head>
-<div class="header">
-    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-
-    </div>
-</div>
 
 <body>
 
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html"><i class="fa fa-home fa-2x" aria-hidden="true" ></i> Home </a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
 
+                  <li>
+                      <a href="team.html">The Team</a>
+                  </li>
 
+                  <li class="dropdown">
+                      <a href="AUV.html" class="dropdown-toggle" data-toggle="dropdown">AUV <b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                          <li>
+                              <a href="mechanical.html">Mechanical</a>
+                          </li>
+                          <li>
+                              <a href="electrical.html">Electrical</a>
+                          </li>
+                          <li>
+                              <a href="programming.html">Programming</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a href="gallery.html">Gallery</a>
+                  </li>
+                  <li>
+                      <a href="contact.html">Contact</a>
+                  </li>
+          </div>
+          <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+  </nav>
 
-<div class="splash-container">
-    <div class="splash">
-        <h1 class="splash-head">R.E.A.F.</h1>
-        <p class="splash-subhead">
-          <br>  Robotic Engineering Aggie Female's AUV team
-        </p>
-        <p>
+    <!-- Full Width Image Header -->
+    <header class="header-image">
+        <div class="headline">
+            <div class="container">
+                <h1>R.E.A.F. Team </h1><br><br><br>
+                <h2>Welcome to the Robotic Engineering Aggie Females Website</h2>
 
-        </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+<h3><i class="fa fa-angle-double-down" aria-hidden="true"></i><i class="fa fa-angle-double-down" aria-hidden="true"></i> Scroll down or navigate the menu to start learning about our team
+<span class="sr-only"></span></h3>
+        <hr class="featurette-divider">
+
+        <!-- First Featurette -->
+        <div class="featurette" id="about">
+            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
+            <h2 class="featurette-heading">This First Heading
+                <span class="text-muted">Will Catch Your Eye</span>
+            </h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Second Featurette -->
+        <div class="featurette" id="services">
+            <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/500x500">
+            <h2 class="featurette-heading">The Second Heading
+                <span class="text-muted">Is Pretty Cool Too.</span>
+            </h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Third Featurette -->
+        <div class="featurette" id="contact">
+            <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
+            <h2 class="featurette-heading">The Third Heading
+                <span class="text-muted">Will Seal the Deal.</span>
+            </h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+
+                </div>
+            </div>
+        </footer>
+
     </div>
-</div>
+    <!-- /.container -->
 
-<div class="content-wrapper">
-    <div class="content">
-        <h2 class="content-head is-center">Follow our progress as we build an autonomous underwater vehicle to compete in the AUVSI foundation's RoboSub competition.</h2>
-        <center><a href="home.html" class="pure-button pure-button-primary"><i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
-<span class="sr-only">Enter</span></i><h1>Enter</h1></a></center>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
 
-</div
-
-
-
-
-
-
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 
 </body>
+
 </html>
