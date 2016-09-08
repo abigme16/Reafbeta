@@ -92,7 +92,7 @@
     <!-- Page Content -->
     <div class="container">
 <h3><i class="fa fa-angle-double-down" aria-hidden="true"></i><i class="fa fa-angle-double-down" aria-hidden="true"></i> Scroll down or navigate the menu to start learning about our team
-<span class="sr-only"></span><br><br>Now accepting applications! Apply <a href="https://docs.google.com/forms/d/e/1FAIpQLSf4HnLQ7tlxnaRU1yYmsyMuAxNsI0IFbp3wdsSAyUA-b3XUMA/viewform?c=0&w=1">Here!</a></h3>
+<span class="sr-only"></span><br><br>Now accepting applications! Apply <a href="https://docs.google.com/forms/d/e/1FAIpQLSf4HnLQ7tlxnaRU1yYmsyMuAxNsI0IFbp3wdsSAyUA-b3XUMA/viewform?c=0&w=1">Here!</a><br>Information session on Wednesday, September 28th in the Engineering Innovation Center!</h3>
         <hr class="featurette-divider">
 
         <!-- First Featurette -->
@@ -173,6 +173,15 @@ Shawna has over 17 years of experience in the engineering education arena. She p
 </script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script> function scrollToAnchor(aid){
+    var aTag = $("a[name='"+ aid +"']");
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+}
+
+    $("#link").click(function() {
+      scrollToAnchor('aboutslide');
+  });
+</script>
 
 </body>
 
