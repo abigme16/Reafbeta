@@ -1,0 +1,22 @@
+<html>
+<head>
+   <script language="javascript" type="text/javascript" src="asd.js"></script>
+</head>
+
+<body>
+
+<form name="form1" action="print.html" method="get">
+name:<input type ="text" id="name" name="n">
+<input type="submit" value="next" >
+<button type="button" id="print" onClick="testJS()"> Print </button>
+</form>
+
+</body>
+
+<script>function testJS() {
+    var b = document.getElementById('name').value,
+        url = "print.html?name=" + encodeURIComponent(b);
+
+    document.location.href = url;
+}</script>
+</html>
