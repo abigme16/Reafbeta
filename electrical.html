@@ -109,52 +109,52 @@
             <div class="col-lg-12">
 
                 <ul id="myTab" class="nav nav-tabs nav-justified">
-                    <li class="active"><a href="#service-one" data-toggle="tab"><i class="fa fa-lightbulb-o"></i> Electrical Subsytem Overview</a>
+                    <li class="active"><a href="#service-one" data-toggle="tab"><i class="fa fa-lightbulb-o"></i> Power</a>
                     </li>
-                    <li class=""><a href="#service-two" data-toggle="tab"><i class="fa fa-lightbulb-o"></i> Power Distribution</a>
+                    <li class=""><a href="#service-two" data-toggle="tab"><i class="fa fa-lightbulb-o"></i> Control Systems</a>
                     </li>
-                    <li class=""><a href="#service-three" data-toggle="tab"><i class="fa fa-lightbulb-o"></i> M4 ATX Power Supply & Batteries</a>
+                    <li class=""><a href="#service-three" data-toggle="tab"><i class="fa fa-lightbulb-o"></i> Sensors</a>
                     </li>
-                    <li class=""><a href="#service-four" data-toggle="tab"><i class="fa fa-lightbulb-o"></i> Sensors</a>
-                    </li>
+
                 </ul>
 
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade active in" id="service-one">
-                        <h4>Electrical Subsystem Overview</h4>
-                        <p>The electrical system is composed of three main parts: power distribution, sensors, and data transfers.<br><br> With exception of the custom Printed Circuit Board (PCB) and thruster data transfer PCB, the electrical components were purchased.<br><br> Wire organization is obtained through the placement of zip ties.</p>
+                        <h4>Power</h4>
+                        <p>Providing power to the AUV are four 14.8 V 10000mAh lithium ion batteries. Lithium ion batteries were chosen because of their reasonable cost, energy density, and size. 14.8 V was the selected voltage because it was the most commonly found voltage that was higher than the maximum required voltage for any of the electrical components.<p>
+
+<h4>Power Distribution</h4>
+Two of the batteries are connected in parallel to an ATX voltage regulator which splits the voltage into a 12V rail to provide power to the NUC and the cameras and  a 5V rail to provide power to other components. A custom printed circuit board is used to distribute power to thee components [Figure 1]. The ATX ensures a steady and consistent voltage supply.  The eight thrusters are connected to the batteries via barrier block terminals. Although there is no ATX between the batteries that are connected to the thrusters there is instead a voltage regulator. The thrusters do not need specific rails as the other components do. Thus, a voltage regulator, which serves to prevent sudden voltage jumps and inconsistencies, is all that is necessary. <br><br>
+Preliminary calculations have shown that the AUV will have a minimum runtime of 25 minutes if all 8 thrusters are running at top speed. This is more than the expected run time of each vehicle listed in the competition manual of 15 minutes. </p>
+
+<center><br><br><img src="pictures/figure1.png" alt="battery assembly" style="width:30%;height:30%"></center>
+
+
                     </div>
                     <div class="tab-pane fade" id="service-two">
-                        <h4>Power Distribution</h4>
-                        <p>The electrical system must provided power to the computer, sensors, and thrusters of the AUV. This process can be separated into 2 major parts: providing each component with a voltage within its range, and maintaining that voltage so it never drops out of the range of the component. Several parts are used to fulfill these requirements, including a custom made pcb. The power distribution system consists of the batteries, an ATX power supply, and the custom (PCB) and provides power to all electrical components.</p>
-                        <img src="Models/PowTD.png" alt="powTD" height="30%" width="40%"><br>
-                    </div>
-                    <div class="tab-pane fade" id="service-three">
-                        <h4>M4 ATX Power Supply & Batteries</h4>
-                        <p>The M4-ATX DC-DC from Minibox, which allows the user to monitor and set up parameters for voltages, is used as the power supply. The ATX is equipped with 3.3 V, 5 V, and 12 V pins. It receives potential from the two 14.8 V batteries, converts it, and connects to the power distribution board which divides the voltage depending on what the different sensors, thrusters, and microcontrollers require. The M4-ATX maintains voltages rails at the levels necessary for the electrical components. It also keeps the rails from experiencing unexpected spikes or voltage drops to prevent damaging the electronics. The ATX is connected to the Y-Harness, batteries, and kill switch as shown below:
-                          <img src="Models/killswitchimp.png" alt="kill switch impl" height="30%" width="40%"><br>
-                          The Ula is powered by two Multistar Lithium Polymer 14.8 V 10,000mAh batteries. The batteries are placed in parallel utilizing a Y-Harness and provide a 20A current to the system. 14.8V batteries were chosen its common usage and voltage higher than the maximum required voltage for any of the electrical voltage. The batteries allow for 30 minutes of run time.
+                        <h4>Control Systems</h4>
+                        <p>The AUV has two types of devices that need to be controlled, thrusters and servos. The BlueRobotics T200 thrusters and the various types of servos being used are both controlled using pulse width modulation (PWM).  The thrusters use an AfroESC 30A (electronic speed controller) to control the speed of the thrusters using the PWM signal. To control all the devices of the AUV, 13 separate PWM generators are needed [Figure 2]. An Arduino Mega was chosen for three key reasons. It is easy to use. There is a vast open source library of code to work with. It has 15 PWM output pins. The servo code has been calibrated to not exceed the servo’s maximum rotation capabilities.
+The Arduino Mega is used to receive the data from the pressure sensor as an analog input, convert it to a digital value and relay it back to the NUC using the serial interface. </p>
+<center><br><br><img src="pictures/figure2.png" alt="battery assembly" style="width:50%;height:50%"></center>
 
-                        </p>
                     </div>
-                    <div class="tab-pane fade" id="service-four">
+
+                    <div class="tab-pane fade" id="service-three">
                         <h4>Sensors</h4>
-                        <p><b>AHRS:</b> Ula utilizes the high-performance Inertial Measurement Unit (IMU) and AHRS in VectorNav’s  VN-100. The VN-100 incorporates a set of 3-axis gyroscopes, 3-axis, accelerometers, 3-axis magnetometers, a barometric pressure sensor, and a 32-bit processor to gather data regarding the Ula’s attitude and heading.
-                      <br>
-                      <i>The VN-100 was donated courtesy of VectorNav</i><br>
-                      <br>
-                      <b>Pressure Sensors:</b> The Ula employs two Measurement Specialities US 300 sensors for detecting leaks in the hull and to measure depth.
+                        <p>The AUV utilizes a Specialties US300 pressure sensor to measure the depth of the vehicle in the water. This year the team could implement the SS Aqua Cams that were purchased last year. The biggest challenged that was faced was getting the analog cameras to convert to a digital signal so that image processing could be used. This task was accomplished using an ION Video 2 PC Analog-To-Digital Video Converter.
+
+
                       <br><br>
-                      <b>Temperature Sensor:</b> In order to prevent damage in the electronics, a temperature sensor is used to ensure the temperature does not get too high.
-                      <br><br>
-                      <b>Cameras:</b> Two USB Logitech C270 720p 3-MP Widescreen HD Webcams are used for detecting the path markers, buoys, and obstacles.
-                      <br><br>
-                      <b>Data</b> Transfer: Data is transferred by using USB A, USB B connectors, and custom made connectors. The flow of data is depicted in the follow diagram:
-                      <br><br>
-                      <img src="Models/DataTD.png" alt="data transfer diagram" height="40%" width="40%"><br><br>
-                      <b>Heat Distribution and Board Placement:</b> The electronics placement corresponds to power, data, and heat distribution. The following diagrams depict the final placements:
-                      <br>
-                      <img src="Models/placement.png" alt="placement" height="30%" width="50%"><br><br>
+
+<h4>AHRS</h4>
+The AUV uses a VectorNav VN-100 [4] that was donated to us by VectorNav to gather information about the vehicle’s attitude and heading. The VN-100 is a high-performance Inertial Measurement Unit (IMU) and AHRS (attitude heading reference systems). It uses the latest solid-state Micro-Electro-Mechanical Systems (MEMS) sensor technology. It was selected because it includes a  set of 3-axis gyroscopes, 3-axis accelerometers, 3-axis magnetometers, a barometric pressure sensor, and a 32-bit processor. <br><br>
+
+<h4>Component Placement</h4>
+The components were arranged inside the hull to keep the center of gravity low and to minimize interference and noise with other electronic components. The interference is mainly a concern with the AHRS because it is such a sensitive piece of equipment.
+<br><br>
+<h4>Connectors</h4>
+A combination of SubConn connectors and BlueRobotics cable penetrators were used to pass wires from outside the hull to the inside. Previously, the team had used all BlueRobotics cable penetrators because of their low cost. This year the SubConn connectors were added to reduce the number of holes that had to be drilled into the endcap.</p>
+
 </p>
                     </div>
                 </div>
