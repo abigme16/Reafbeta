@@ -85,7 +85,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Programming
-                    <small>Team Lead: Amelia Lessen</small>
+                    <small>Team Lead: Abishalini Sivaraman</small>
 
                 </h1>
 
@@ -113,45 +113,53 @@
                 <ul id="myTab" class="nav nav-tabs nav-justified">
                     <li class="active"><a href="#service-one" data-toggle="tab"><i class="fa fa-desktop"></i> Programming Overview</a>
                     </li>
-                    <li class=""><a href="#service-two" data-toggle="tab"><i class="fa fa-desktop"></i> Microcontrollers</a>
+                    <li class=""><a href="#service-two" data-toggle="tab"><i class="fa fa-desktop"></i> Image Processing</a>
                     </li>
                     <li class=""><a href="#service-three" data-toggle="tab"><i class="fa fa-desktop"></i> Thruster Control</a>
                     </li>
-                    <li class=""><a href="#service-four" data-toggle="tab"><i class="fa fa-desktop"></i> Camera</a>
+                    <li class=""><a href="#service-four" data-toggle="tab"><i class="fa fa-desktop"></i> Kalman Filters</a>
                     </li>
                 </ul>
 
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade active in" id="service-one">
                         <h2>Programming Overview</h2>
-                        <p>
-                        Ula is programed to gather information about the sub and it’s surround through the various sensors.<br><br> It then synthesizes and analyzes the data to determine the AUV’s next procedure to complete the task at hand.<br><br> Lastly, information is sent to the thrusters to carry out the necessary adjustments to Ula’s position.
-                        </p>
+                        <p>A significant portion of the code coordinates the communication between the main computer, the sensors, the cameras, and the thrusters. The main computer - an Intel NUC - and an Arduino Mega communicate using a serial interface. Hardware constraints dictate us to connect the pressure sensor and the thrusters to the Arduino Mega. Data from the pressure sensor and the thrusters are extracted by the Arduino Mega and sent to the NUC. All other sensors and cameras are connected directly to the NUC. At the beginning of the main program on the NUC, separate threads are created, each gathering data from a different device or sending thruster commands to the Mega.
+<br><br>
+Once the data is gathered in the main program, each sensor data is evaluated to determine any necessary changes to functionality of the thrusters. For example, if the orientation data from the AHRS shows that the AUV is angled too far in one direction and may be about to flip upside down, the side thrusters are turned on in a way that corrects back to the expected orientation. Likewise, the pressure sensor is used to detect the depth of the AUV in the water. If the AUV is about to accidently breach the surface, the up/down thrusters are immediately turned on to force the AUV back down. The data from the thrusters themselves are the most crucial because they reveal whether or not the thrusters themselves are about to overheat, in which case the thrusters are all turned completely off.</p>
+
                     </div>
                     <div class="tab-pane fade" id="service-two">
-                        <h2>Microcontrollers</h2>
-                        <p>The software is distributed across several microcontrollers.  Continuous data from the sensors is received by the Arduino Uno microcontrollers. As data is received, the Arduinos output this data to the Raspberry Pis. For example, the Arduino connected to the thrusters passes incoming data from the Raspberry Pis to each thruster.
-                      <br><br>
-                        The Raspberry Pis compare video footage from the two cameras and run it through Open CV, an open-source image processing library. This is then passed to the second Raspberry Pi which stores all microcontroller data. This Raspberry Pi analyzes the data and determines which task should be performed.
-                      </p>
+                        <h2>Image Processing</h2>
+                        <p><h4>IMAGE DETECTION</h4>
+To complete to obstacles, the AUV will need to detect images using computer vision. In order to do this, three approaches are being considered: background subtraction, template matching, and SURF/SIFT algorithms.
+<br><br>
+Background subtraction involves extracting an image’s foreground for further processing, and is most useful when the background is static. The background for the rear-facing camera features the bottom of the pool which remains fairly consistent throughout the shallow end of the pool. As such, this approach would be effective for the line-following task.
+<br><br>
+Template matching is a technique that identifies parts of an image that match with an existing template image. This method would be useful for following a line that branches off or curves, as well as identifying markers for the various obstacles throughout the pool. Eigenspaces can be implemented to account for different conditions such as perspective, illumination, and color contrast that will vary within the images.
+<br><br>
+Speeded Up Robust Features (SURF) and Scale-Invariant Feature Transform (SIFT) are based on the same principles, but execute each step differently. The algorithms involve detecting the image, providing a description of an image feature, and comparing the descriptors obtained from different images. Analysis has shown that SURF is three times faster than SIFT with comparable performance. SURF and SIFT can handle images that blur or rotate, making them ideal for the front cameras that will experience motion blur as the robot traverses the pool.
+
+<br><br>
+<h4>STEREOVISION</h4>
+
+Stereo vision is the process of creating 3d images from two or more digital images obtained from a series of cameras. We are using two front-facing cameras to obtain different views of the field and these images are compiled together to form a more accurate 3d representation of the field which helps us get more information about the depth of the plane. Stereovision is essential to estimate the location of objects.
+</p>
+
 
                     </div>
                     <div class="tab-pane fade" id="service-three">
                       <h2>Thruster Control</h2>
-                      <p>The Raspberry Pi B and Arduino Uno are responsible for controlling the thrusters. The transfer of data is depicted below:
-                      <br><br><img src="Models/thrusterdia.png" alt="thrusterdataflow" height="50%" width="50%">
+                      <p>Using the data gathered from the cameras and the current positioning of the AUV in space, the AUV calculates the most direct path to the object of interest in the camera frame. This path is then reduced to a unit vector in the direction that the AUV needs to travel based on the distance to the object calculated through the image processing. The AUV then uses a control and feedback loop to align its heading with the correct path, turning the thrusters on and off to control the surge, heave, and sway of the AUV.</p>
 
-                      <br><br>
-                      The sensor collects and sends data regarding the surroundings to the Arduino Uno. Through USB connection, the Raspberry Pi and Arduino exchange data as the Raspberry Pi utilizes Python 2.7 to interpret it and determine an action to return to the Arduino Uno. The Arduino then passes the command the the thrusters to result in vertical movement.
-                      <br><br>
-                      The thrusters send information regarding their temperature, speed, current, and voltage usage to the Raspberry Pi B to log the data. This allows for real time readjustment.
-                      <br><br>
-                      The AHRS passes information regarding the vehicle’s orientation so the Raspberry Pi can analyze the data and send information to the thrusters regarding horizontal movement.
-                      </p>
                     </div>
                     <div class="tab-pane fade" id="service-four">
-                        <h2>Cameras</h2>
-                        <p>Two Logitech HD Webcam c270 cameras, one facing forwards, the other facing downwards, provide information for navigation and target tracking. Using Intel’s Open CV 2.4 Library, real time target tracking is possible through color detection. First, the frame is downsized to increase the number of frames per second. Then, in order to reduce the noise from high frequencies, it is then blurred to focus on the objects inside the 600px width. Lastly, a conversion from frame to HVS color space is done. This allows Ula to determine color and distance.</p>
+                        <h2>Kalman Filters</h2>
+
+<p>The task of tracking moving objects in a dynamic background proves to be complex due to change in orientation of the object, partial and complete object occlusion, varying lighting conditions, camera motion and unwanted noise added to the camera feed. The objective of tracking an object for our AUV is accomplished by deploying the use of Kalman filters. The Kalman filter provides a recursive solution to predict the state of the object from the past values and noisy measurement data. The Kalman filter can get close to accurate predictions after few iterations of its prediction and update steps.
+<br><br>
+In our algorithm, the Kalman filter also tries to adjust for the movement of the camera. This adjustment can be done by increasing the dimensions of the state variable to compensate the image frame positions and velocity with respect to the object or it can be done by adding the velocity of the camera to the kinematic equations incorporated to predict the future location of the object. In this way, we have tried to use the Kalman filter for image stabilization.</p>
+
                     </div>
                 </div>
 
